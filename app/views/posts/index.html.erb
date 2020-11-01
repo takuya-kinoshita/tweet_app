@@ -1,0 +1,13 @@
+
+
+<!-- ここに変数post2を定義して、指定された投稿内容を代入してください -->
+
+<div class="main posts-index">
+    <div class="container">
+    <% @posts.each do |post| %>
+        <div class="posts-index-item">
+            <%= link_to(post.content, "/posts/#{post.id}") %>
+    </div>
+    <% end %>
+    </div>
+</div>

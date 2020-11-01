@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TweetApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <header>
+  <div class="header-logo">
+    <a href="/">TweetApp</a>
+  </div>
+  <ul class="header-menus">
+    <li>
+      <a href="/about">Tweetapp</a>
+    </li>
+    <li>
+      <a href="/posts/index">投稿一覧</a>
+    </li>
+
+    <li>
+      <%= link_to("新規投稿", "/posts/new") %>
+    </li>
+
+    <li>
+      <%= link_to("ユーザー一覧", "/users/index") %>
+    </li>
+
+    <li>
+      <%= link_to("新規登録", "/signup") %>
+    </li>
+
+    <li>
+      <%= link_to("ログイン", "/login") %>
+    </li>
+
+  </ul>
+</header>
+
+<% if  flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
